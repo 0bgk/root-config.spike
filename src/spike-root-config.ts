@@ -10,6 +10,16 @@ registerApplication({
   activeWhen: ["/"],
 });
 
+registerApplication({
+  name: "@spike/modern-app",
+  app: () =>
+    import(
+      /* webpackIgnore: true */ // @ts-ignore-next
+      "@spike/modern-app"
+    ),
+  activeWhen: ["/modern"],
+});
+
 // registerApplication({
 //   name: "@spike/navbar",
 //   app: () =>
