@@ -1,11 +1,11 @@
-import { registerApplication, start, LifeCycles } from "single-spa";
+import { registerApplication, start } from "single-spa";
 
 registerApplication({
-  name: "@single-spa/welcome",
+  name: "@spike/legacy-app",
   app: () =>
     import(
       /* webpackIgnore: true */ // @ts-ignore-next
-      "https://unpkg.com/single-spa-welcome/dist/single-spa-welcome.js"
+      "@spike/legacy-app"
     ),
   activeWhen: ["/"],
 });
@@ -19,16 +19,6 @@ registerApplication({
     ),
   activeWhen: ["/modern"],
 });
-
-// registerApplication({
-//   name: "@spike/navbar",
-//   app: () =>
-//     import(
-//       /* webpackIgnore: true */ // @ts-ignore-next
-//       "@spike/navbar"
-//     ),
-//   activeWhen: ["/"],
-// });
 
 start({
   urlRerouteOnly: true,
