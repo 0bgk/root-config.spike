@@ -7,7 +7,7 @@ registerApplication({
       /* webpackIgnore: true */ // @ts-ignore-next
       "@spike/legacy-app"
     ),
-  activeWhen: ["/"],
+  activeWhen: (location) => location.pathname === "/",
 });
 
 registerApplication({
